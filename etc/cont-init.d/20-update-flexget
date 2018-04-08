@@ -11,3 +11,5 @@ pip install -U cfscrape
 
 # Install flexget last (it might force specific versions of other packages).
 pip install -U flexget
+
+pip install git+https://github.com/carlba/Flexget.git@feature/temp_use_torrentleach_v4_api
