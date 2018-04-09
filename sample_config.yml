@@ -1,12 +1,23 @@
 web_server: yes
 
-schedules:
-  - tasks: '*'
-    interval:
-      minutes: 1
-
 tasks:
   test task:
-    rss: http://myfavoritersssite.com/myfeed.rss
     series:
-      - My Favorite Show
+      - Rick and Morty:
+          begin: S02E01
+    discover:
+      what:
+        - next_series_episodes:
+            backfill: yes
+      from:
+        - torrentleech:
+            rss_key: b09fa538a509e4762db0
+            username: fenixes
+            password: 356c992e#
+    download: ~/downloads
+
+schedules:
+  # Run every 30 minutes
+  - tasks: '*'
+    schedule:
+      minute: "*/20"

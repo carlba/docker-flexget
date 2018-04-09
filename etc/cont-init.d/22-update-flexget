@@ -9,10 +9,18 @@ pip install -U chardet
 pip install -U irc_bot
 pip install -U cfscrape
 
-# Install flexget last (it might force specific versions of other packages).
+# Clone flexget source
 cd /tmp
 rm -rf Flexget
-git clone -b feature/temp_use_torrentleach_v4_api  https://github.com/carlba/Flexget.git
+git clone -b feature/temp_use_torrentleech_v4_api  https://github.com/carlba/Flexget.git
 cd Flexget
-python dev_tools.py bundle_webui
-python setup.py install˚
+
+# Build flexget UI
+apk add --update nodejs nodejs-npm && npm install -g bower && npm install -g gulp
+cd flexget/ui/v1
+npm install
+bower update
+gulp build
+
+# Install flexget
+python setup.py install
