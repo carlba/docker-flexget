@@ -13,6 +13,7 @@ pip install -U cfscrape
 pip install git+https://github.com/carlba/Flexget.git@feature/temp_use_torrentleach_v4_api
 
 cd /tmp
-git clone https://github.com/carlba/Flexget.git &&
+rm -rf Flexget
+git clone https://github.com/carlba/Flexget.git
 cd Flexget
 python dev_tools.py bundle_webui
