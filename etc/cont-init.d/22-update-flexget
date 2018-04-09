@@ -11,3 +11,13 @@ pip install -U cfscrape
 
 # Install flexget last (it might force specific versions of other packages).
 pip install git+https://github.com/carlba/Flexget.git@feature/temp_use_torrentleach_v4_api
+
+# Install flexget UI
+apk add --update nodejs nodejs-npm && npm install -g bower && npm install -g gulp
+
+cd /tmp && \
+    git clone https://github.com/carlba/Flexget.git && \
+    cd Flexget/flexget/ui/v1 && \
+    npm install && \
+    bower update && \
+    gulp build
