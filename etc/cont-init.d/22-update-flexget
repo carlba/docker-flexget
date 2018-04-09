@@ -16,11 +16,13 @@ git clone -b feature/temp_use_torrentleech_v4_api  https://github.com/carlba/Fle
 cd Flexget
 
 # Build flexget UI
-apk add --update nodejs nodejs-npm && npm install -g bower && npm install -g gulp
+apk add --update nodejs nodejs-npm g++ make && npm install -g bower && npm install -g gulp
+
 cd flexget/ui/v1
 npm install
-bower update
+bower update --allow-root
 gulp build
 
 # Install flexget
+cd ../../..
 python setup.py install
