@@ -5,6 +5,9 @@ ENV PYTHONIOENCODING="UTF-8"
 
 # Copy local files.
 COPY etc/ /etc
+
+RUN apk add --update --no-cache py-pip
+
 RUN chmod -v +x \
     /etc/cont-init.d/*  \
     /etc/services.d/*/run
