@@ -6,7 +6,8 @@ ENV PYTHONIOENCODING="UTF-8"
 # Copy local files.
 COPY etc/ /etc
 
-RUN apk add --update --no-cache py-pip
+# The pip installation is broken somehow this fixes it
+RUN curl https://bootstrap.pypa.io/get-pip.py | python
 
 RUN chmod -v +x \
     /etc/cont-init.d/*  \
