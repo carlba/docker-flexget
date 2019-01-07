@@ -30,3 +30,6 @@ pip install -U cfscrape
 
 # Install flexget last (it might force specific versions of other packages).
 pip install -U flexget
+
+# Make sure the .config-lock file is absent on start of Docker container
+rm -rf /config/.config-lock
